@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "447948535735",
+    "project_id": "sirasafe-73b7d",
+    "storage_bucket": "sirasafe-73b7d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447948535735:android:4a37b048a06015af359a32",
+        "android_client_info": {
+          "package_name": "com.example.sirasafe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "447948535735-cjkroar4t7vdrg650o38obsuvb5omajj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-jl_UvVK3UIdQmrh-5Pnx9Ws30nVpjl4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "447948535735-cjkroar4t7vdrg650o38obsuvb5omajj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
