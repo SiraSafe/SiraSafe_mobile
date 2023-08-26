@@ -25,18 +25,20 @@ class _PageInscriptionState extends State<PageInscription> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // Add your logo here
+            Image.asset('assets/logo/logo.png',
+          width: 100, // Adjust the width as needed
+          height: 100,
+            ),
+            SizedBox(height: 20),
             Center(
               child: Text(
                 'Etes-Vous?',
-                style: SafeGoogleFont (
+                style: SafeGoogleFont(
                   'League Spartan',
                   fontSize: 24,
                   fontWeight: FontWeight.w800,
                   color: Color(0xff205375),
-                  // fontSize: 24,  // Change the font size as per your preference
-                  // fontWeight: FontWeight.bold, // You can use other font weights too
-                  // color: Colors.blue, // Change the color as per your preference
-                  // fontStyle: FontStyle.italic
                 ),
               ),
             ),

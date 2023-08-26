@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'bottomElements/message.dart';
+import 'bottomElements/profile.dart';
+import 'homePage/conducteur/homeConducteur.dart';
 import 'homePage/welcomePage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -21,8 +23,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       //scrollBehavior: MyCustomScrollBehavior(),
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+          cardColor: Color(0xff205375),
       ),
+      routes: {
+        '/HomeConducteur': (context) => HomeConducteur(),
+        '/MessagePage': (context) => MessagePage(),
+        '/ProfilePage': (context) => ProfilePage(),
+      },
       home: Scaffold(
         body: Center(
           child: WelcomePage(),

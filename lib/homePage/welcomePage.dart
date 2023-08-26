@@ -30,10 +30,6 @@ class WelcomePage extends StatelessWidget {
                   fontSize: 18,
                   fontWeight: FontWeight.w800,
                   color: Color(0xff205375),
-                  // fontSize: 24,  // Change the font size as per your preference
-                  // fontWeight: FontWeight.bold, // You can use other font weights too
-                  // color: Colors.blue, // Change the color as per your preference
-                  // fontStyle: FontStyle.italic
                 ),
               ),
             ),
