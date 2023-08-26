@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">447948535735-cjkroar4t7vdrg650o38obsuvb5omajj.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">447948535735</string>
+    <string name="google_api_key" translatable="false">AIzaSyC-jl_UvVK3UIdQmrh-5Pnx9Ws30nVpjl4</string>
+    <string name="google_app_id" translatable="false">1:447948535735:android:4a37b048a06015af359a32</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC-jl_UvVK3UIdQmrh-5Pnx9Ws30nVpjl4</string>
+    <string name="google_storage_bucket" translatable="false">sirasafe-73b7d.appspot.com</string>
+    <string name="project_id" translatable="false">sirasafe-73b7d</string>
+</resources>
