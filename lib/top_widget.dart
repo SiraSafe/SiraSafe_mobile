@@ -2,6 +2,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'homePage/conducteur/drawer_element/avertissements.dart';
+import 'homePage/conducteur/drawer_element/notifications.dart';
+import 'homePage/conducteur/drawer_element/privacy.dart';
+
 class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -35,37 +39,56 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             title: Text('Avertissements'),
             onTap: () {
-              // Handle item 2 tap
+              Navigator.push(context,
+                MaterialPageRoute(
+                    builder: (context) => PageAlerte()),
+              );
             },
           ),
           ListTile(
             title: Text('Notifications'),
             onTap: () {
-              // Handle item 2 tap
+              Navigator.push(context, 
+                  MaterialPageRoute(
+                      builder: (context) => PageNotification()),
+              );
             },
           ),
           ListTile(
             title: Text('Trajets'),
             onTap: () {
-              // Handle item 2 tap
+              Navigator.push(context,
+                MaterialPageRoute(
+                    builder: (context) => PageAlerte()),
+              );
             },
           ),
           ListTile(
             title: Text('A Propos de nous'),
             onTap: () {
-              // Handle item 2 tap
+              Navigator.push(context,
+                MaterialPageRoute(
+                    builder: (context) => PageNotification()),
+              );
             },
           ),
           ListTile(
             title: Text('Politique de confidentialité et Conditions d\'utilisation'),
             onTap: () {
+              Navigator.push(context,
+                MaterialPageRoute(
+                    builder: (context) => PrivacyPage()),
+              );
 
             },
           ),
           ListTile(
             title: Text('Compte'),
             onTap: () {
-              // Handle item 2 tap
+              Navigator.push(context,
+                MaterialPageRoute(
+                    builder: (context) => PageNotification()),
+              );
             },
           ),
         ],

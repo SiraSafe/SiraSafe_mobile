@@ -12,13 +12,13 @@ class MessagePage extends StatelessWidget {
     double ffem = fem * 0.97;
 
     return Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Color(0xff205375), Color(0xff219ebc)],
-          ),
+            colors: <Color>[Color(0xe56fffe9), Color(0xd6ffc107), Color(0xff205375)]
         ),
+      ),
         child: Stack(
           children: [
             Positioned(
@@ -30,14 +30,11 @@ class MessagePage extends StatelessWidget {
                   width: 334*fem,
                   height: 361*fem,
                   child: Container(
+                    padding: EdgeInsets.fromLTRB(0*fem, 6*fem, 0*fem, 52*fem),
+                    width: double.infinity,
                     decoration: BoxDecoration (
-                      borderRadius: BorderRadius.circular(30*fem),
-                      gradient: LinearGradient (
-                        begin: Alignment(0, -1),
-                        end: Alignment(0, 1),
-                        colors: <Color>[Color(0xe56fffe9), Color(0xd6ffc107), Color(0xff205375)],
-                        stops: <double>[0, 0.484, 1],
-                      ),
+                      color: Color(0xffffffff),
+                      borderRadius: BorderRadius.circular(50*fem),
                     ),
                   ),
                 ),
@@ -50,7 +47,7 @@ class MessagePage extends StatelessWidget {
               child: Align(
                 child: SizedBox(
                   width: 320*fem,
-                  height: 56*fem,
+                  height: 76*fem,
                   child: Text(
                     'Nous sommes à votre écoute : N\'hésitez pas à nous écrire pour toute question, suggestion ou demande d\'assistance.',
                     style: SafeGoogleFont (

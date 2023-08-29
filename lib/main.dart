@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'bottomElements/message.dart';
 import 'bottomElements/profile.dart';
+import 'homePage/conducteur/drawer_element/notifications.dart';
 import 'homePage/conducteur/homeConducteur.dart';
 import 'homePage/welcomePage.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/HomeConducteur': (context) => HomeConducteur(),
         '/MessagePage': (context) => MessagePage(),
-        '/ProfilePage': (context) => ProfilePage(),
+        '/PageNotification': (context) => PageNotification(),
       },
       home: Scaffold(
         body: Center(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sirasafe/top_widget.dart';
-
+import '../../bottomElements/profile.dart';
 import '../botom_widget.dart';
 
 
@@ -54,9 +54,13 @@ class _HomeConducteurState extends State<HomeConducteur> {
           // ),
           IconButton(
             icon: CircleAvatar(
-              backgroundImage: AssetImage('assets/logo/logo.png'),
+              backgroundImage: AssetImage('assets/logo/k.jpeg'),
               radius: 20,
             ), onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfilePage()),
+            );
 
           },
           ),
@@ -201,7 +205,7 @@ class _HomeConducteurState extends State<HomeConducteur> {
             Navigator.pushNamed(context, '/HomeConducteur');
           } else if (index == 2) {
             // Handle navigation to profile page
-            Navigator.pushNamed(context, '/ProfilePage');
+            Navigator.pushNamed(context, '/PageNotification');
           }
         },
       ),

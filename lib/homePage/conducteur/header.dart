@@ -44,17 +44,6 @@ class MyHeader extends StatelessWidget {
   }
 
 
-  // BoxDecoration _boxDecoration() {
-  //   return BoxDecoration(
-  //     borderRadius: const BorderRadius.vertical(
-  //       bottom: Radius.circular(20),
-  //     ),
-  //     image: DecorationImage(
-  //       image: AssetImage('assets/images/rectangle-24-q1h.png'), // Replace with your image path
-  //       fit: BoxFit.contain,
-  //     ),
-  //   );
-  // }
 
 
   Widget _searchBox(GlobalKey<ScaffoldState> scaffoldKey) {

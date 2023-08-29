@@ -20,17 +20,20 @@ class PageConnection extends StatelessWidget {
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return Scaffold(
-      // appBar: AppBar(title: Text('First Page')),
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 10,),
-            Container(
-              // connexioneym (30:432)
-              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 1*fem, 20*fem),
+            // Add your logo here
+            Image.asset('assets/logo/1.png',
+              width: 150, // Adjust the width as needed
+              height: 150,
+            ),
+            SizedBox(height: 30),
+            Center(
               child: Text(
-                'Se Connecter',
+                "Se Connecter",
                 textAlign: TextAlign.center,
                 style: SafeGoogleFont (
                   'League Spartan',

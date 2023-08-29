@@ -20,27 +20,31 @@ class PassagerForm extends StatelessWidget {
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return Scaffold(
+      backgroundColor: Colors.white,
       // appBar: AppBar(title: Text('First Page')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 10,),
-            Container(
-              // connexioneym (30:432)
-              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 1*fem, 20*fem),
-              child: Text(
-                  "S'inscrire",
-                textAlign: TextAlign.center,
-                style: SafeGoogleFont (
-                  'League Spartan',
-                  fontSize: 30*ffem,
-                  fontWeight: FontWeight.w800,
-                  height: 0.6666666667*ffem/fem,
-                  color: Color(0xff205375),
-                ),
-              ),
+          // Add your logo here
+          Image.asset('assets/logo/1.png',
+          width: 150, // Adjust the width as needed
+          height: 150,
+        ),
+        SizedBox(height: 30),
+        Center(
+          child: Text(
+            "S'inscrire",
+            textAlign: TextAlign.center,
+            style: SafeGoogleFont (
+              'League Spartan',
+              fontSize: 30*ffem,
+              fontWeight: FontWeight.w800,
+              height: 0.6666666667*ffem/fem,
+              color: Color(0xff205375),
             ),
+          ),
+        ),
             SizedBox(height: 40,),
             GoogleSignInButton(
               onPressed: () {

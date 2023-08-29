@@ -18,25 +18,23 @@ class _PageInscriptionState extends State<PageInscription> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text("Welcome to SiraSafe"),
-      // ),
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Add your logo here
-            Image.asset('assets/logo/logo.png',
-          width: 100, // Adjust the width as needed
-          height: 100,
+            Image.asset('assets/logo/1.png',
+          width: 150, // Adjust the width as needed
+          height: 150,
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 30),
             Center(
               child: Text(
                 'Etes-Vous?',
                 style: SafeGoogleFont(
                   'League Spartan',
-                  fontSize: 24,
+                  fontSize: 29,
                   fontWeight: FontWeight.w800,
                   color: Color(0xff205375),
                 ),
