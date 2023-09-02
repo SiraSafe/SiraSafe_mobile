@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:sirasafe/homePage/conducteur/drawer_element/trajets.dart';
 import 'package:sirasafe/top_widget.dart';
 import '../../bottomElements/profile.dart';
+import '../../utils/utils.dart';
 import '../botom_widget.dart';
-
+import 'drawer_element/bilanConduite.dart';
 
 
 class HomeConducteur extends StatefulWidget {
@@ -23,8 +25,9 @@ class _HomeConducteurState extends State<HomeConducteur> {
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.grey,
+        backgroundColor: Color(0xff205375),
         title: TextFormField(
           textAlign: TextAlign.start,
           controller: _searchText,
@@ -46,12 +49,6 @@ class _HomeConducteurState extends State<HomeConducteur> {
           ),
         ),
         actions: [
-          // IconButton(
-          //   icon: Icon(Icons.notifications, color: Color(0xff205375)),
-          //   onPressed: () {
-          //     // Action when notification icon is pressed
-          //   },
-          // ),
           IconButton(
             icon: CircleAvatar(
               backgroundImage: AssetImage('assets/logo/k.jpeg'),
@@ -70,145 +67,212 @@ class _HomeConducteurState extends State<HomeConducteur> {
       drawer: AppDrawer(),
       body: Container(
         width: double.infinity,
-        height: 300*fem,
-        child: Stack(
+        height: 200 * fem,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-          Positioned(
-          // rectangle24eP9 (70:505)
-          left: 0*fem,
-          top: 0*fem,
-          child: Align(
-            child: SizedBox(
-              width: 390*fem,
-              height: 272*fem,
-              child: ClipRRect(
-                borderRadius: BorderRadius.only (
-                  bottomRight: Radius.circular(50*fem),
-                  bottomLeft: Radius.circular(50*fem),
-                ),
-                child: Image.asset(
-                  'assets/images/rectangle-24-q1h.png',
-                  fit: BoxFit.cover,
+            Image.asset(
+              'assets/logo/1.png',
+              height: 150,
+              width: 150,
+            ),
+            SizedBox(height: 20),
+            TextButton(
+              onPressed: () {
+                Navigator.push(context,
+                  MaterialPageRoute(
+                      builder: (context) => PageBilan()),
+                );
+              },
+              child: Text(
+                'Découvrez votre Bilan de Conduite : \nConsultez les Alertes',
+                style: TextStyle(
+                  decoration: TextDecoration.underline,
+                  decorationColor: Color(0xff205375),
+                  decorationThickness: 1,
+                  fontSize: 13 * ffem,
+                  fontWeight: FontWeight.w400,
+                  height: 0.92 * ffem / fem,
+                  letterSpacing: -0.27 * fem,
+                  color: Color(0xff205375),
                 ),
               ),
+
             ),
-          ),
-        ),
+            SizedBox(height: 10),
+            Text(
+              'Derniers trajets',
+              style: SafeGoogleFont (
+                'League Spartan',
+                fontSize: 13*ffem,
+                fontWeight: FontWeight.w400,
+                height: 0.92*ffem/fem,
+                letterSpacing: -0.24*fem,
+                color: Color(0xff000000),
+              ),
+            ),
+            SizedBox(height: 10),
             Container(
               width: double.infinity,
-              height: 400*fem,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              padding: EdgeInsets.all(10),
+              color: Colors.grey[200],
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Positioned(
-                    // rectangle25MeF (70:518)
-                    left: 53*fem,
-                    top: 354*fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 61*fem,
-                        height: 48*fem,
-                        child: TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom (
-                            padding: EdgeInsets.zero,
-                          ),
-                          child: Container(
-                            decoration: BoxDecoration (
-                              borderRadius: BorderRadius.circular(15*fem),
-                              color: Color(0xff219ebc),
-                            ),
-                          ),
-                        ),
-                      ),
+                  Text(
+                    'Bamako - Ségou',
+                    style: SafeGoogleFont (
+                      'League Spartan',
+                      fontSize: 13*ffem,
+                      fontWeight: FontWeight.w400,
+                      height: 0.92*ffem/fem,
+                      letterSpacing: -0.195*fem,
+                      color: Color(0xff000000),
                     ),
                   ),
-                  Positioned(
-                    // rectangle26pGw (70:519)
-                    left: 164*fem,
-                    top: 354*fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 61*fem,
-                        height: 48*fem,
-                        child: TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom (
-                            padding: EdgeInsets.zero,
-                          ),
-                          child: Container(
-                            decoration: BoxDecoration (
-                              borderRadius: BorderRadius.circular(15*fem),
-                              color: Color(0xffffc107),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    // rectangle27hrX (70:520)
-                    left: 267*fem,
-                    top: 354*fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 61*fem,
-                        height: 48*fem,
-                        child: TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom (
-                            padding: EdgeInsets.zero,
-                          ),
-                          child: Container(
-                            decoration: BoxDecoration (
-                              borderRadius: BorderRadius.circular(15*fem),
-                              color: Color(0xff6fffe9),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    // epinfofilledpgF (70:532)
-                    left: 281.1240234375*fem,
-                    top: 364*fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 29.75*fem,
-                        height: 28*fem,
-                        child: Image.asset(
-                          'assets/page-1/images/ep-info-filled-TJf.png',
-                          width: 29.75*fem,
-                          height: 28*fem,
-                        ),
-                      ),
+                  SizedBox(height: 10),
+                  Text(
+                    '30 juil. 2023',
+                    style: SafeGoogleFont (
+                      'League Spartan',
+                      fontSize: 10*ffem,
+                      fontWeight: FontWeight.w400,
+                      height: 0.92*ffem/fem,
+                      letterSpacing: -0.165*fem,
+                      color: Color(0xff000000),
                     ),
                   ),
                 ],
               ),
             ),
-        ]
+            SizedBox(height: 10),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(10),
+              color: Colors.grey[200],
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Bamako - Mopti',
+                    style: SafeGoogleFont (
+                      'League Spartan',
+                      fontSize: 13*ffem,
+                      fontWeight: FontWeight.w400,
+                      height: 0.92*ffem/fem,
+                      letterSpacing: -0.195*fem,
+                      color: Color(0xff000000),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    '20 Jan. 2023',
+                    style: SafeGoogleFont (
+                      'League Spartan',
+                      fontSize: 10*ffem,
+                      fontWeight: FontWeight.w400,
+                      height: 0.92*ffem/fem,
+                      letterSpacing: -0.165*fem,
+                      color: Color(0xff000000),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 10),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(10),
+              color: Colors.grey[200],
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Bamako - Ségou',
+                    style: SafeGoogleFont (
+                      'League Spartan',
+                      fontSize: 13*ffem,
+                      fontWeight: FontWeight.w400,
+                      height: 0.92*ffem/fem,
+                      letterSpacing: -0.195*fem,
+                      color: Color(0xff000000),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    '30 juil. 2023',
+                    style: SafeGoogleFont (
+                      'League Spartan',
+                      fontSize: 10*ffem,
+                      fontWeight: FontWeight.w400,
+                      height: 0.92*ffem/fem,
+                      letterSpacing: -0.165*fem,
+                      color: Color(0xff000000),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 10),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(10),
+              color: Colors.grey[200],
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Bamako - Kayes',
+                    style: SafeGoogleFont (
+                      'League Spartan',
+                      fontSize: 13*ffem,
+                      fontWeight: FontWeight.w400,
+                      height: 0.92*ffem/fem,
+                      letterSpacing: -0.195*fem,
+                      color: Color(0xff000000),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    '10 juil. 2023',
+                    style: SafeGoogleFont (
+                      'League Spartan',
+                      fontSize: 10*ffem,
+                      fontWeight: FontWeight.w400,
+                      height: 0.92*ffem/fem,
+                      letterSpacing: -0.165*fem,
+                      color: Color(0xff000000),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 35,
+              alignment: Alignment.bottomRight,
+              child: TextButton(
+                child: Text(
+                  "Voir plus",
+                  style: TextStyle(color: Color(0xff205375)),
+                  textAlign: TextAlign.right,
+                ),
+                onPressed: () => Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => PageTrajet()
+                ),
+
+                ),
+              ),
+            ),
+
+          ],
+        ),
       ),
-    ),
-      bottomNavigationBar: CustomBottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-          if (index == 0) {
-            // Handle navigation to message page
-            Navigator.pushNamed(context, '/MessagePage');
-          } else if (index == 1) {
-            // Handle navigation to home page
-            Navigator.pushNamed(context, '/HomeConducteur');
-          } else if (index == 2) {
-            // Handle navigation to profile page
-            Navigator.pushNamed(context, '/PageNotification');
-          }
-        },
-      ),
+
+
+
+
     );
   }
 }

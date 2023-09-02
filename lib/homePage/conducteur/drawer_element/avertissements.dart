@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:quickalert/models/quickalert_type.dart';
-import 'package:quickalert/widgets/quickalert_dialog.dart';
+
+import '../../../utils/utils.dart';
+import '../../botom_widget.dart';
 
 
-class PageAlerte extends StatelessWidget {
+
+class PageAlerte extends StatefulWidget {
+  @override
+  State<PageAlerte> createState() => _PageAlerteState();
+}
+
+class _PageAlerteState extends State<PageAlerte> {
+  int _currentIndex = 1;
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       // appBar: AppBar(
       //   title: Text('Notifications'),
@@ -18,6 +29,8 @@ class PageAlerte extends StatelessWidget {
           ),
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+
           children: [
             buildNotificationCard(
               context: context,
@@ -55,69 +68,134 @@ class PageAlerte extends StatelessWidget {
           ],
         ),
       ),
+      // bottomNavigationBar: CustomBottomNavigationBar(
+      //   currentIndex: _currentIndex,
+      //   onTap: (index) {
+      //     setState(() {
+      //       _currentIndex = index;
+      //     });
+      //     if (index == 0) {
+      //       // Handle navigation to message page
+      //       Navigator.pushNamed(context, '/MessagePage');
+      //     } else if (index == 1) {
+      //       // Handle navigation to home page
+      //       Navigator.pushNamed(context, '/HomeConducteur');
+      //     } else if (index == 2) {
+      //       // Handle navigation to profile page
+      //       Navigator.pushNamed(context, '/PageNotification');
+      //     }
+      //   },
+      // ),
     );
   }
-  Widget buildNotificationCard({
-    required BuildContext context,
-    required QuickAlertType type,
-    required String title,
-    required String text,
-    required String description,
-  }) {
-    return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      elevation: 2,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          gradient: LinearGradient(
-            begin: Alignment(0.003, -2.418),
-            end: Alignment(0, 1),
-            colors: <Color>[Color(0x80205375), Color(0x80205375)],
-            stops: <double>[0, 1],
-          ),
+}
+Widget buildNotificationCard({
+  required BuildContext context,
+  required QuickAlertType type,
+  required String title,
+  required String text,
+  required String description,
+}) {
+  return Card(
+    margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+    elevation: 2,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+    child: Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        gradient: LinearGradient(
+          begin: Alignment(0.003, -2.418),
+          end: Alignment(0, 1),
+          colors: <Color>[Color(0xff219ebc), Color(0xff219ebc)],
+          stops: <double>[0, 1],
         ),
-
-       child: ListTile(
+      ),
+      child: ListTile(
         onTap: () {
           showDialog(
             context: context,
             builder: (BuildContext context) {
-            return AlertDialog(
-             title: Text(title),
-             content: Column(
-             mainAxisSize: MainAxisSize.min,
-             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-            Text(description),
-            ],
-           ),
-          actions: [
-            TextButton(
-             onPressed:(){
-              Navigator.pop(context);
-               },
-            child: Text('Fermer'),
+              return AlertDialog(
+                title: Text(title),
+                content: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      description,
+                      style: SafeGoogleFont(
+                        'League Spartan',
+                        fontSize: 20,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff205375),
+                      ),
+                    ),
+                  ],
+                ),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text(
+                      'Fermer',
+                      style: SafeGoogleFont(
+                        'League Spartan',
+                        fontSize: 20,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff205375),
+                      ),
+                    ),
+                  ),
+                ],
+              );
+            },
+          );
+        },
+        leading: SizedBox(
+          width: 20, // Adjust the width as needed
+          // child: CircleAvatar(
+          //   backgroundColor: Colors.transparent,
+          //   backgroundImage: AssetImage('assets/logo/1.png'),
+          //   radius: 20,
+          // ),
+        ),
+        title: Row(
+          children: [
+            Expanded(
+              child: Text(
+                title,
+                style: SafeGoogleFont(
+                  'League Spartan',
+                  fontSize: 20,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.white,
+                ),
+              ),
             ),
-           ],
-
-          );
-        },
-          );
-        },
-        leading: CircleAvatar(
-          backgroundColor: Colors.transparent,
-          child: Icon(
-            type == QuickAlertType.success ? Icons.check_circle : Icons.error,
-            color: type == QuickAlertType.success ? Colors.green : Colors.red,
+            CircleAvatar(
+              backgroundColor: Colors.transparent,
+              child: Icon(
+                type == QuickAlertType.success
+                    ? Icons.check_circle
+                    : Icons.error,
+                color:
+                type == QuickAlertType.success ? Colors.green : Colors.red,
+              ),
+            ),
+          ],
+        ),
+        subtitle: Text(
+          text,
+          style: SafeGoogleFont(
+            'League Spartan',
+            fontSize: 10,
+            fontWeight: FontWeight.w200,
+            color: Colors.white,
           ),
         ),
-        title: Text(title,style: TextStyle(color: Colors.white),),
-        subtitle: Text(text),
-
       ),
-       ),
-    );
-  }
+    ),
+  );
 }
+

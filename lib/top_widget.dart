@@ -2,9 +2,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'bottomElements/profile.dart';
+import 'homePage/conducteur/drawer_element/apropos.dart';
 import 'homePage/conducteur/drawer_element/avertissements.dart';
+import 'homePage/conducteur/drawer_element/bilanConduite.dart';
 import 'homePage/conducteur/drawer_element/notifications.dart';
 import 'homePage/conducteur/drawer_element/privacy.dart';
+import 'homePage/conducteur/drawer_element/trajets.dart';
 
 class AppDrawer extends StatelessWidget {
   @override
@@ -33,7 +37,10 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             title: Text('Bilan de Conduite'),
             onTap: () {
-              // Handle item 1 tap
+              Navigator.push(context,
+                MaterialPageRoute(
+                    builder: (context) => PageBilan()),
+              );
             },
           ),
           ListTile(
@@ -59,7 +66,7 @@ class AppDrawer extends StatelessWidget {
             onTap: () {
               Navigator.push(context,
                 MaterialPageRoute(
-                    builder: (context) => PageAlerte()),
+                    builder: (context) => PageTrajet()),
               );
             },
           ),
@@ -68,7 +75,7 @@ class AppDrawer extends StatelessWidget {
             onTap: () {
               Navigator.push(context,
                 MaterialPageRoute(
-                    builder: (context) => PageNotification()),
+                    builder: (context) => PageApropos()),
               );
             },
           ),
@@ -87,7 +94,7 @@ class AppDrawer extends StatelessWidget {
             onTap: () {
               Navigator.push(context,
                 MaterialPageRoute(
-                    builder: (context) => PageNotification()),
+                    builder: (context) => ProfilePage()),
               );
             },
           ),

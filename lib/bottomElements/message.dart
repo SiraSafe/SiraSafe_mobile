@@ -1,24 +1,30 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../homePage/conducteur/Apropos/messagePage.dart';
 import '../utils/utils.dart';
 
-class MessagePage extends StatelessWidget {
+class MessagePage extends StatefulWidget {
+  @override
+  State<MessagePage> createState() => _MessagePageState();
+}
+
+class _MessagePageState extends State<MessagePage> {
+  int _currentIndex = 1;
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
 
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: <Color>[Color(0xe56fffe9), Color(0xd6ffc107), Color(0xff205375)]
+    return Scaffold(
+      appBar: AppBar(),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: <Color>[Color(0xe56fffe9), Color(0xd6ffc107), Color(0xff205375)]
+          ),
         ),
-      ),
         child: Stack(
           children: [
             Positioned(
@@ -66,7 +72,27 @@ class MessagePage extends StatelessWidget {
 
         ),
 
+      ),
+      // bottomNavigationBar: CustomBottomNavigationBar(
+      //   currentIndex: _currentIndex,
+      //   onTap: (index) {
+      //     setState(() {
+      //       _currentIndex = index;
+      //     });
+      //     if (index == 0) {
+      //       // Handle navigation to message page
+      //       Navigator.pushNamed(context, '/MessagePage');
+      //     } else if (index == 1) {
+      //       // Handle navigation to home page
+      //       Navigator.pushNamed(context, '/HomeConducteur');
+      //     } else if (index == 2) {
+      //       // Handle navigation to profile page
+      //       Navigator.pushNamed(context, '/PageNotification');
+      //     }
+      //   },
+      // ),
 
     );
   }
 }
+

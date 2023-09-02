@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import '../../homePage/botom_widget.dart';
 import '../../homePage/conducteur/homeConducteur.dart';
 import '../../utils/utils.dart';
 import '../CustomTextField.dart';
@@ -93,7 +94,7 @@ class PageConnection extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomeConducteur()),
+                  MaterialPageRoute(builder: (context) => BottomNavBar()),
                 );
               },
               style: ElevatedButton.styleFrom(

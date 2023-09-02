@@ -2,70 +2,160 @@ import 'package:flutter/material.dart';
 import 'package:quickalert/models/quickalert_type.dart';
 import 'package:quickalert/widgets/quickalert_dialog.dart';
 
+import '../../../utils/utils.dart';
+import '../../botom_widget.dart';
 
-class PageNotification extends StatelessWidget {
+
+class PageNotification extends StatefulWidget {
+  @override
+  State<PageNotification> createState() => _PageNotificationState();
+}
+
+class _PageNotificationState extends State<PageNotification> {
+  int _currentIndex = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Notifications'),
-      ),
+      // appBar: AppBar(
+      //   title: Text('Notifications'),
+      // ),
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: <Color>[Color(0xe56fffe9), Color(0xd6ffc107), Color(0xff205375)],
+          image: DecorationImage(
+            image: AssetImage('assets/logo/screen.png'), // Replace with your image path
+            fit: BoxFit.cover, // Adjust the fit to your preference
           ),
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+
           children: [
             buildNotificationCard(
               context: context,
-              type: QuickAlertType.success,
-              title: 'Success',
-              text: 'Transaction Completed Successfully!',
+              type: QuickAlertType.error,
+              title: 'Systeme',
+              text: 'Mise en jour ',
+              description: 'Profitez des derniers mise en jour et fonctionnalités du systeme pour une expérience de  voyage encore plus fluide',
+
             ),
             buildNotificationCard(
               context: context,
               type: QuickAlertType.error,
-              title: 'Error',
-              text: 'Sorry, something went wrong',
+              title: 'Alertes de la Compagnie',
+              text: 'Cher Mohamed Traoré',
+              description: 'Cher Mohamed Traoré,\nRécemment, nous avons remarqué des signes de somnolence lors de certains de vos trajets. Votre sécurité, ainsi que celle de nos passagers, est notre priorité absolue.\n\nPour garantir des trajets sûrs, nous vous recommandons de prendre des pauses régulières lors de longs trajets et de vous reposer suffisamment avant de conduire. La somnolence au volant peut être dangereuse et augmenter les risques d\'accidents.\n\nVotre vigilance et votre état d\'éveil sont essentiels pour une conduite sécurisée. Nous vous encourageons à rester alerte tout au long de vos trajets.\nMerci de votre coopération envers la sécurité routière.\n\nL\'équipe Sirasafe\n\n',
+
+            ),
+            buildNotificationCard(
+              context: context,
+              type: QuickAlertType.error,
+              title: 'Alerte - System',
+              text: 'Cher Mohamed Traoré',
+              description: 'Cher Mohamed Traoré,\nRécemment, nous avons remarqué des signes de somnolence lors de certains de vos trajets. Votre sécurité, ainsi que celle de nos passagers, est notre priorité absolue.\n\nPour garantir des trajets sûrs, nous vous recommandons de prendre des pauses régulières lors de longs trajets et de vous reposer suffisamment avant de conduire. La somnolence au volant peut être dangereuse et augmenter les risques d\'accidents.\n\nVotre vigilance et votre état d\'éveil sont essentiels pour une conduite sécurisée. Nous vous encourageons à rester alerte tout au long de vos trajets.\nMerci de votre coopération envers la sécurité routière.\n\nL\'équipe Sirasafe\n\n',
+
+            ),
+            buildNotificationCard(
+              context: context,
+              type: QuickAlertType.error,
+              title: 'Alertes de la Compagnie',
+              text: 'Cher Mohamed Traoré',
+              description: 'Cher Mohamed Traoré,\nRécemment, nous avons remarqué des signes de somnolence lors de certains de vos trajets. Votre sécurité, ainsi que celle de nos passagers, est notre priorité absolue.\n\nPour garantir des trajets sûrs, nous vous recommandons de prendre des pauses régulières lors de longs trajets et de vous reposer suffisamment avant de conduire. La somnolence au volant peut être dangereuse et augmenter les risques d\'accidents.\n\nVotre vigilance et votre état d\'éveil sont essentiels pour une conduite sécurisée. Nous vous encourageons à rester alerte tout au long de vos trajets.\nMerci de votre coopération envers la sécurité routière.\n\nL\'équipe Sirasafe\n\n',
+
             ),
             // Add more notification cards here...
           ],
         ),
       ),
+
     );
   }
-  Widget buildNotificationCard({
-    required BuildContext context,
-    required QuickAlertType type,
-    required String title,
-    required String text,
-  }) {
-    return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      elevation: 2,
+}
+Widget buildNotificationCard({
+  required BuildContext context,
+  required QuickAlertType type,
+  required String title,
+  required String text,
+  required String description,
+}) {
+  return Card(
+    margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+    elevation: 2,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+    child: Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        gradient: LinearGradient(
+          begin: Alignment(0.003, -2.418),
+          end: Alignment(0, 1),
+          colors: <Color>[Color(0xff219ebc), Color(0xff219ebc)],
+          stops: <double>[0, 1],
+        ),
+      ),
+
       child: ListTile(
         onTap: () {
-          QuickAlert.show(
+          showDialog(
             context: context,
-            type: type,
-            title: title,
-            text: text,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: Text(title),
+                content: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(description,style: SafeGoogleFont(
+                      'League Spartan',
+                      fontSize: 20,
+                      fontWeight: FontWeight.w400,
+                      // height: 15,
+                      color: Color(
+                          0xff205375),
+                    ),),
+                  ],
+                ),
+                actions: [
+                  TextButton(
+                    onPressed:(){
+                      Navigator.pop(context);
+                    },
+                    child: Text('Fermer',style: SafeGoogleFont(
+                      'League Spartan',
+                      fontSize: 20,
+                      fontWeight: FontWeight.w400,
+                      // height: 15,
+                      color: Color(
+                          0xff205375),
+                    ),),
+                  ),
+                ],
+
+              );
+            },
           );
         },
         leading: CircleAvatar(
           backgroundColor: Colors.transparent,
-          child: Icon(
-            type == QuickAlertType.success ? Icons.check_circle : Icons.error,
-            color: type == QuickAlertType.success ? Colors.green : Colors.red,
-          ),
+          backgroundImage: AssetImage('assets/logo/1.png'),
+          radius: 20, // Ajustez la taille de l'avatar selon vos préférences
         ),
-        title: Text(title),
-        subtitle: Text(text),
+        title: Text(title,style: SafeGoogleFont(
+          'League Spartan',
+          fontSize: 20,
+          fontWeight: FontWeight.w400,
+          // height: 15,
+          color: Colors.white,
+        ),),
+        subtitle: Text(text,style: SafeGoogleFont(
+          'League Spartan',
+          fontSize: 10,
+          fontWeight: FontWeight.w200,
+          // height: 15,
+          color: Colors.white,
+        ),),
+
       ),
-    );
-  }
+    ),
+
+
+  );
 }
