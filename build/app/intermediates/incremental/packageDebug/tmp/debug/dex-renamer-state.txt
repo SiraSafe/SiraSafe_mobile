@@ -1,4 +1,4 @@
-#Mon Aug 28 11:29:37 GMT 2023
+#Mon Sep 04 18:16:34 GMT 2023
 base.1=/Users/os/StudioProjects/sirasafe/build/app/intermediates/dex/debug/mergeDexDebug/classes2.dex
 path.1=classes2.dex
 base.0=/Users/os/StudioProjects/sirasafe/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
