@@ -22,158 +22,161 @@ class ConducteurForm extends StatelessWidget {
     return Scaffold(
       // appBar: AppBar(title: Text('First Page')),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(height: 40,),
-            Container(
-              // connexioneym (30:432)
-              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 1*fem, 20*fem),
-              child: Text(
-                'Se Connecter',
-                textAlign: TextAlign.center,
-                style: SafeGoogleFont (
-                  'League Spartan',
-                  fontSize: 30*ffem,
-                  fontWeight: FontWeight.w800,
-                  height: 0.6666666667*ffem/fem,
-                  color: Color(0xff205375),
-                ),
-              ),
-            ),
-            SizedBox(height: 20,),
-            GoogleSignInButton(
-              onPressed: () {
-                // Implement Google sign-in logic here
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ConnectionGoogle()),
-                );
-                // For example, use Firebase Authentication with Google
-              },
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Text("OU",
-              textAlign: TextAlign.center,
-              style: SafeGoogleFont (
-                'League Spartan',
-                fontSize: 20,
-                fontWeight: FontWeight.w400,
-                // height: 15,
-                color: Colors.black,
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-
-            CustomTextField(
-              controller: _telephoneController,
-              labelText: 'Telephone',
-              hintText: 'Entrez votre Telephone ou Email',
-              keyboardType: TextInputType.number,
-            ),
-            SizedBox(height: 20),
-            CustomTextField(
-              controller: _motdpassController,
-              labelText: 'Mot de Passe',
-              hintText: 'Entrez votre Mot de passe',
-              obscureText: true,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-
-            Container(
-              child: RichText(
-                text: TextSpan(
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(height: 40,),
+              Container(
+                // connexioneym (30:432)
+                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 1*fem, 20*fem),
+                child: Text(
+                  'Se Connecter',
+                  textAlign: TextAlign.center,
                   style: SafeGoogleFont (
                     'League Spartan',
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                    // height: 1.1538461538*ffem/fem,
-                    // letterSpacing: -0.400000006*fem,
-                    color: Color(0xff000000),
+                    fontSize: 30*ffem,
+                    fontWeight: FontWeight.w800,
+                    height: 0.6666666667*ffem/fem,
+                    color: Color(0xff205375),
                   ),
-                  children: [
-                    TextSpan(
-                      text: 'En cliquant sur "Continuer avec google”, tu acceptes les ',
-                    ),
-                    TextSpan(
-                      text: 'Règles de confidentialité',
-                      style: SafeGoogleFont (
-                        'League Spartan',
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        height: 1.1538461538*ffem/fem,
-                        letterSpacing: -0.400000006*fem,
-                        color: Color(0xff02a2fd),
-                      ),
-                    ),
-                    TextSpan(
-                      text: ' de SiraSafe et ses ',
-                    ),
-                    TextSpan(
-                      text: 'Conditions d\'utilisation',
-                      style: SafeGoogleFont (
-                        'League Spartan',
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        height: 1.1538461538*ffem/fem,
-                        letterSpacing: -0.400000006*fem,
-                        color: Color(0xff02a2fd),
-                      ),
-                    ),
-                    TextSpan(
-                      text: '.\n',
-                    ),
-                  ],
                 ),
               ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomeConducteur()),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xfffd9e02), // Change the background color of the button
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-
-                ),
-                minimumSize: Size(150, 50), // Set the minimum size of the button
-                padding: EdgeInsets.symmetric(vertical: 12, horizontal: 25), // Set the padding of the button
-                elevation: 5, // Change the elevation of the button
-
+              SizedBox(height: 20,),
+              GoogleSignInButton(
+                onPressed: () {
+                  // Implement Google sign-in logic here
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ConnectionGoogle()),
+                  );
+                  // For example, use Firebase Authentication with Google
+                },
               ),
-
-              child: Text("Connection",
+              SizedBox(
+                height: 20,
+              ),
+              Text("OU",
                 textAlign: TextAlign.center,
                 style: SafeGoogleFont (
                   'League Spartan',
                   fontSize: 20,
                   fontWeight: FontWeight.w400,
                   // height: 15,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
+              SizedBox(
+                height: 10,
+              ),
 
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            signUpOption(context),
-          ],
+              CustomTextField(
+                controller: _telephoneController,
+                labelText: 'Telephone',
+                hintText: 'Entrez votre Telephone ou Email',
+                keyboardType: TextInputType.number,
+              ),
+              SizedBox(height: 20),
+              CustomTextField(
+                controller: _motdpassController,
+                labelText: 'Mot de Passe',
+                hintText: 'Entrez votre Mot de passe',
+                obscureText: true,
+              ),
+              SizedBox(
+                height: 10,
+              ),
 
+              Container(
+                child: RichText(
+                  text: TextSpan(
+                    style: SafeGoogleFont (
+                      'League Spartan',
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      // height: 1.1538461538*ffem/fem,
+                      // letterSpacing: -0.400000006*fem,
+                      color: Color(0xff000000),
+                    ),
+                    children: [
+                      TextSpan(
+                        text: 'En cliquant sur "Continuer avec google”, tu acceptes les ',
+                      ),
+                      TextSpan(
+                        text: 'Règles de confidentialité',
+                        style: SafeGoogleFont (
+                          'League Spartan',
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          height: 1.1538461538*ffem/fem,
+                          letterSpacing: -0.400000006*fem,
+                          color: Color(0xff02a2fd),
+                        ),
+                      ),
+                      TextSpan(
+                        text: ' de SiraSafe et ses ',
+                      ),
+                      TextSpan(
+                        text: 'Conditions d\'utilisation',
+                        style: SafeGoogleFont (
+                          'League Spartan',
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          height: 1.1538461538*ffem/fem,
+                          letterSpacing: -0.400000006*fem,
+                          color: Color(0xff02a2fd),
+                        ),
+                      ),
+                      TextSpan(
+                        text: '.\n',
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomeConducteur()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xfffd9e02), // Change the background color of the button
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+
+                  ),
+                  minimumSize: Size(150, 50), // Set the minimum size of the button
+                  padding: EdgeInsets.symmetric(vertical: 12, horizontal: 25), // Set the padding of the button
+                  elevation: 5, // Change the elevation of the button
+
+                ),
+
+                child: Text("Connection",
+                  textAlign: TextAlign.center,
+                  style: SafeGoogleFont (
+                    'League Spartan',
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                    // height: 15,
+                    color: Colors.white,
+                  ),
+                ),
+
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              signUpOption(context),
+            ],
+
+          ),
         ),
       ),
     );

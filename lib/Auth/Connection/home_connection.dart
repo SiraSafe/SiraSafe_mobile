@@ -23,111 +23,114 @@ class PageConnection extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Add your logo here
-            Image.asset('assets/logo/1.png',
-              width: 150, // Adjust the width as needed
-              height: 150,
-            ),
-            SizedBox(height: 30),
-            Center(
-              child: Text(
-                "Se Connecter",
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Add your logo here
+              Image.asset('assets/logo/1.png',
+                width: 150, // Adjust the width as needed
+                height: 150,
+              ),
+              SizedBox(height: 30),
+              Center(
+                child: Text(
+                  "Se Connecter",
+                  textAlign: TextAlign.center,
+                  style: SafeGoogleFont (
+                    'League Spartan',
+                    fontSize: 30*ffem,
+                    fontWeight: FontWeight.w800,
+                    height: 0.6666666667*ffem/fem,
+                    color: Color(0xff205375),
+                  ),
+                ),
+              ),
+              SizedBox(height: 40,),
+              GoogleSignInButton(
+                onPressed: () {
+                  // Implement Google sign-in logic here
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ConnectionGoogle()),
+                  );
+                  // For example, use Firebase Authentication with Google
+                },
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text("OU",
                 textAlign: TextAlign.center,
                 style: SafeGoogleFont (
-                  'League Spartan',
-                  fontSize: 30*ffem,
-                  fontWeight: FontWeight.w800,
-                  height: 0.6666666667*ffem/fem,
-                  color: Color(0xff205375),
-                ),
-              ),
-            ),
-            SizedBox(height: 40,),
-            GoogleSignInButton(
-              onPressed: () {
-                // Implement Google sign-in logic here
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ConnectionGoogle()),
-                );
-                // For example, use Firebase Authentication with Google
-              },
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Text("OU",
-              textAlign: TextAlign.center,
-              style: SafeGoogleFont (
-                'League Spartan',
-                fontSize: 20,
-                fontWeight: FontWeight.w400,
-                // height: 15,
-                color: Colors.black,
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-
-            CustomTextField(
-              controller: _telephoneController,
-              labelText: 'Telephone',
-              hintText: 'Entrez votre Telephone ou Email',
-              keyboardType: TextInputType.number,
-            ),
-            SizedBox(height: 20),
-            CustomTextField(
-              controller: _motdpassController,
-              labelText: 'Mot de Passe',
-              hintText: 'Entrez votre Mot de passe',
-              obscureText: true,
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            forgetPassword(context),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => BottomNavBar()),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(
-                    0xff205375), // Change the background color of the button
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-                minimumSize:
-                Size(150, 50), // Set the minimum size of the button
-                padding: EdgeInsets.symmetric(
-                    vertical: 12,
-                    horizontal: 25), // Set the padding of the button
-                elevation: 5, // Change the elevation of the button
-              ),
-              child: Text(
-                "Se connecter",
-                textAlign: TextAlign.center,
-                style: SafeGoogleFont(
                   'League Spartan',
                   fontSize: 20,
                   fontWeight: FontWeight.w400,
                   // height: 15,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            signUpOption(context),
-          ],
+              SizedBox(
+                height: 10,
+              ),
 
+              CustomTextField(
+                controller: _telephoneController,
+                labelText: 'Telephone',
+                hintText: 'Entrez votre Telephone ou Email',
+                keyboardType: TextInputType.number,
+              ),
+              SizedBox(height: 20),
+              CustomTextField(
+                controller: _motdpassController,
+                labelText: 'Mot de Passe',
+                hintText: 'Entrez votre Mot de passe',
+                obscureText: true,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              forgetPassword(context),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => BottomNavBar()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(
+                      0xff205375), // Change the background color of the button
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                  minimumSize:
+                  Size(150, 50), // Set the minimum size of the button
+                  padding: EdgeInsets.symmetric(
+                      vertical: 12,
+                      horizontal: 25), // Set the padding of the button
+                  elevation: 5, // Change the elevation of the button
+                ),
+                child: Text(
+                  "Se connecter",
+                  textAlign: TextAlign.center,
+                  style: SafeGoogleFont(
+                    'League Spartan',
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                    // height: 15,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              signUpOption(context),
+            ],
+
+          ),
         ),
       ),
     );

@@ -19,16 +19,11 @@ class _HoraireBusState extends State<HoraireBus> {
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return Container(
+      color: Colors.white,
       width: double.infinity,
       child: Container(
         width: double.infinity,
         child: Container(
-
-          width: double.infinity,
-          decoration: BoxDecoration (
-          color: Color(0x96219ebc),
-            borderRadius: BorderRadius.circular(50*fem),
-          ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -89,6 +84,7 @@ class _HoraireBusState extends State<HoraireBus> {
         ),
       ),
       ),
+
 
 
 

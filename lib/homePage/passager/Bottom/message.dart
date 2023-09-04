@@ -18,7 +18,7 @@ class _MessagePageState extends State<MessagePage> {
     double ffem = fem * 0.97;
 
     return Scaffold(
-      appBar: AppBar(),
+      // appBar: AppBar(),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -75,24 +75,7 @@ class _MessagePageState extends State<MessagePage> {
         ),
 
       ),
-      // bottomNavigationBar: CustomBottomNavigationBar(
-      //   currentIndex: _currentIndex,
-      //   onTap: (index) {
-      //     setState(() {
-      //       _currentIndex = index;
-      //     });
-      //     if (index == 0) {
-      //       // Handle navigation to message page
-      //       Navigator.pushNamed(context, '/MessagePage');
-      //     } else if (index == 1) {
-      //       // Handle navigation to home page
-      //       Navigator.pushNamed(context, '/HomeConducteur');
-      //     } else if (index == 2) {
-      //       // Handle navigation to profile page
-      //       Navigator.pushNamed(context, '/PageNotification');
-      //     }
-      //   },
-      // ),
+
 
     );
   }

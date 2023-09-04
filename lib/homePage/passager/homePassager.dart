@@ -60,8 +60,18 @@ class _HomePassagerState extends State<HomePassager> {
       ),
 
       drawer: MyDrawer(),
-      body:Container(),
-
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/logo/back.jpeg'), // Remplacez 'votre_image.jpg' par le chemin de votre image de fond
+            fit: BoxFit.cover, // Vous pouvez ajuster ceci en fonction de vos besoins
+          ),
+        ),
+        child: Center(
+          // Placez ici le contenu de votre page
+          // Par exemple, un ListView, Column, etc.
+        ),
+      ),
 
 
     );
