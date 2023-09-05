@@ -1,6 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sirasafe/homePage/passager/Horaire/dimanche.dart';
+import 'package:sirasafe/homePage/passager/Horaire/jeudi.dart';
+import 'package:sirasafe/homePage/passager/Horaire/samedi.dart';
+import 'package:sirasafe/homePage/passager/Horaire/vendredi.dart';
 import '../Horaire/lundi.dart';
+import '../Horaire/mardi.dart';
+import '../Horaire/mercredi.dart';
 
 class HoraireBus extends StatefulWidget {
   const HoraireBus({Key? key}) : super(key: key);
@@ -59,13 +65,13 @@ class _HoraireBusState extends State<HoraireBus> {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.transparent, // Fond du bouton transparent
+                      primary: Colors.transparent,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                       minimumSize: Size(150, 50),
                       padding: EdgeInsets.symmetric(vertical: 35, horizontal: 16),
-                      elevation: 0, // Supprimer l'ombre du bouton
+                      elevation: 0,
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -75,7 +81,7 @@ class _HoraireBusState extends State<HoraireBus> {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white, // Couleur du texte
+                            color: Colors.white,
                           ),
                         ),
                       ],
@@ -115,19 +121,19 @@ class _HoraireBusState extends State<HoraireBus> {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => LundiPage()),
+                              MaterialPageRoute(builder: (context) => MardiPage()),
                             );
                           },
                           style: ElevatedButton.styleFrom(
                             primary:
-                                Colors.transparent, // Fond du bouton transparent
+                                Colors.transparent,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20.0),
                             ),
                             minimumSize: Size(150, 50),
 
                             padding: EdgeInsets.symmetric(vertical: 35, horizontal: 16),
-                            elevation: 0, // Supprimer l'ombre du bouton
+                            elevation: 0,
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -172,18 +178,18 @@ class _HoraireBusState extends State<HoraireBus> {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => LundiPage()),
+                              MaterialPageRoute(builder: (context) => MercrediPage()),
                             );
                           },
                           style: ElevatedButton.styleFrom(
                             primary:
-                                Colors.transparent, // Fond du bouton transparent
+                                Colors.transparent,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20.0),
                             ),
                             minimumSize: Size(150, 50),
                             padding: EdgeInsets.symmetric(vertical: 35, horizontal: 16),
-                            elevation: 0, // Supprimer l'ombre du bouton
+                            elevation: 0,
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -193,7 +199,7 @@ class _HoraireBusState extends State<HoraireBus> {
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.white, // Couleur du texte
+                                  color: Colors.white,
                                 ),
                               ),
                             ],
@@ -231,17 +237,17 @@ class _HoraireBusState extends State<HoraireBus> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => LundiPage()),
+                        MaterialPageRoute(builder: (context) => JeudiPage()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.transparent, // Fond du bouton transparent
+                      primary: Colors.transparent,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                       minimumSize: Size(150, 50),
                       padding: EdgeInsets.symmetric(vertical: 35, horizontal: 16),
-                      elevation: 0, // Supprimer l'ombre du bouton
+                      elevation: 0,
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -251,7 +257,7 @@ class _HoraireBusState extends State<HoraireBus> {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white, // Couleur du texte
+                            color: Colors.white,
                           ),
                         ),
                       ],
@@ -290,18 +296,18 @@ class _HoraireBusState extends State<HoraireBus> {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => LundiPage()),
+                              MaterialPageRoute(builder: (context) => VendrediPage()),
                             );
                           },
                           style: ElevatedButton.styleFrom(
                             primary:
-                                Colors.transparent, // Fond du bouton transparent
+                                Colors.transparent,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20.0),
                             ),
                             minimumSize: Size(150, 50),
                             padding: EdgeInsets.symmetric(vertical: 35, horizontal: 16),
-                            elevation: 0, // Supprimer l'ombre du bouton
+                            elevation: 0,
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -311,7 +317,7 @@ class _HoraireBusState extends State<HoraireBus> {
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.white, // Couleur du texte
+                                  color: Colors.white,
                                 ),
                               ),
                             ],
@@ -347,18 +353,18 @@ class _HoraireBusState extends State<HoraireBus> {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => LundiPage()),
+                              MaterialPageRoute(builder: (context) => SamediPage()),
                             );
                           },
                           style: ElevatedButton.styleFrom(
                             primary:
-                                Colors.transparent, // Fond du bouton transparent
+                                Colors.transparent,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20.0),
                             ),
                             minimumSize: Size(150, 50),
                             padding: EdgeInsets.symmetric(vertical: 35, horizontal: 16),
-                            elevation: 0, // Supprimer l'ombre du bouton
+                            elevation: 0,
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -368,7 +374,7 @@ class _HoraireBusState extends State<HoraireBus> {
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.white, // Couleur du texte
+                                  color: Colors.white,
                                 ),
                               ),
                             ],
@@ -407,7 +413,7 @@ class _HoraireBusState extends State<HoraireBus> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => LundiPage()),
+                        MaterialPageRoute(builder: (context) => DimanchePage()),
                       );
                     },
                     style: ElevatedButton.styleFrom(

@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sirasafe/homePage/passager/Drawer/horaire.dart';
 
+import '../../utils/utils.dart';
 import 'Bottom/profile.dart';
 import 'Drawer/top_widget.dart';
 
@@ -63,13 +65,35 @@ class _HomePassagerState extends State<HomePassager> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/logo/back.jpeg'), // Remplacez 'votre_image.jpg' par le chemin de votre image de fond
-            fit: BoxFit.cover, // Vous pouvez ajuster ceci en fonction de vos besoins
+            image: AssetImage('assets/logo/back.jpeg'),
+            fit: BoxFit.cover,
           ),
         ),
         child: Center(
-          // Placez ici le contenu de votre page
-          // Par exemple, un ListView, Column, etc.
+          child: TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HoraireBus()),
+              );
+            },
+            style: TextButton.styleFrom (
+              padding: EdgeInsets.zero,
+            ),
+            child: Text(
+              'Consultez les horaires de bus et les chauffeurs affectés',
+              textAlign: TextAlign.center,
+              style: SafeGoogleFont (
+                'League Spartan',
+                fontSize: 30,
+                fontWeight: FontWeight.w600,
+                height: 0.92*ffem/fem,
+                letterSpacing: -0.27*fem,
+                color: Colors.white,
+                decoration: TextDecoration.underline,
+              ),
+            ),
+          ),
         ),
       ),
 
